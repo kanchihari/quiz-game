@@ -171,3 +171,17 @@ select{
     /* show when answer submitted*/
     display: none;
 }
+.end-page .score{
+color: #fff;
+font-size: 25px;
+font-weight: 500;
+margin-bottom: 80px;
+text-align: center;
+}
+.end-page .score-text{
+    color: #a2aace;
+    font-size: 16px;
+    margin-bottom: 120px;
+}
+
+
