@@ -75,7 +75,7 @@ select{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 .timer .progress{
     position: relative;
@@ -104,4 +104,20 @@ select{
     color: #fff;
     font-size: 16px;
     font-weight: 500;
+}
+.question-wrapper .question-number{
+    color: #a2aace;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.question-wrapper .question-number .question-total{
+    color: #576081;
+    font-size: 18px;
+}
+.question-wrapper .question{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
 }
