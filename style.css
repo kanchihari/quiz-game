@@ -157,4 +157,13 @@ select{
 .answer.selected .checkbox .icon{
     opacity: 1;
 }
-
+.answer.correct {
+    border-color: #0cef2a;
+}
+.answer.wrong{
+    border-color: #fc3939;
+}
+.question-wrapper,
+.answer-wrapper{
+    margin-bottom: 50px;
+}
