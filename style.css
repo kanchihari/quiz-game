@@ -167,3 +167,7 @@ select{
 .answer-wrapper{
     margin-bottom: 50px;
 }
+.btn.next{
+    /* show when answer submitted*/
+    display: none;
+}
