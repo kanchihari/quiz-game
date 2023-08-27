@@ -48,7 +48,7 @@ select{
 }
 .btn-start{
     width: 100%;
-    height: 60px;
+    height: 50px;
     margin-top: 50px;
     background-color: #3c9cf7;
     border: none;
@@ -66,3 +66,7 @@ select{
     cursor: not-allowed;
     background-color: #576081;
 }
+.hide{
+    display: none;
+}
+
