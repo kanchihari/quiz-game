@@ -63,6 +63,31 @@ const showQuestion = (question) => {
     questionNumber = document.querySelector(".question-number");
 
     questionText.innerHTML =question.question;
+
+
+    // Creating an array of answers, combining incorrect answers and the correct answer
+
+    const answers = [
+        question.incorrect_answers,
+        question.correct_answer.toString(),
+    ];
+    
+    //correct answer will be always at the last
+    // Shuffling the 'answers' array to randomize the order of answers.
+
+      answersWrapper.innerHTML = "";
+      answers.sort(() => Math.random() - 0.5);
+      answers.forEach((answer) => {
+        answersWrapper.innerHTML += `
+                      <div class="answer ">
+                <span class="text">${answer}</span>
+                <span class="checkbox">
+                  <i class="fas fa-check"></i>
+                </span>
+              </div>
+            `;
+      });
 };
+
 
 });
