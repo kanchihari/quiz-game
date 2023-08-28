@@ -57,6 +57,9 @@ const startQuiz = () => {
 
 startButton.addEventListener("click", startQuiz);
 
+const submitButton = document.querySelector(".submit");
+const nextButton = document.querySelector(".next");
+
 const showQuestion = (question) => {
     const questionText = document.querySelector(".question"),
     answersWrapper = document.querySelector(".answer-wrapper"),
@@ -95,6 +98,25 @@ const showQuestion = (question) => {
         questions.indexOf(question) + 1
       }</span>
                 <span class="total">/${questions.length}</span>`;
+
+    // Add EventListener to each answer
+
+    const answerPart =document.querySelectorAll(".answer");
+    answerPart.forEach((answer) => {
+        answer.addEventListener("click",() => {
+            // if answer not already submitted
+            if(!answer.classList.contains("checked")){
+                //remove checked from other answer
+                answerPart.forEach((answer) => {
+                    answer.classList.remove("selected");
+                });
+                // add selected on currently clicked answer
+                answer.classList.add("selected");
+                // after any answer is selected enable submit button
+                submitButton.disabled = false;
+            }
+        });
+    });
 };
 
 });
