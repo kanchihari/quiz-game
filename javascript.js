@@ -68,7 +68,7 @@ const showQuestion = (question) => {
     // Creating an array of answers, combining incorrect answers and the correct answer
 
     const answers = [
-        question.incorrect_answers,
+        ...question.incorrect_answers,
         question.correct_answer.toString(),
     ];
     
@@ -87,7 +87,14 @@ const showQuestion = (question) => {
               </div>
             `;
       });
-};
 
+    // Update the question number display on the quizpage
+    //shows the current question number out of the total number of questions.
+    
+    questionNumber.innerHTML = ` Question <span class="current">${
+        questions.indexOf(question) + 1
+      }</span>
+                <span class="total">/${questions.length}</span>`;
+};
 
 });
