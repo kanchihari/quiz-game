@@ -167,11 +167,14 @@ const checkAnswer = () =>{
               answer.querySelector(".text").innerHTML ===
               questions[currentQuestion - 1].correct_answer
             ) {
+            // only add correct class to correct answer
               answer.classList.add("correct");
             }
           });
       }
     } else {
+        //answer check will be also triggered when time reaches zero.
+        //and when if nothing is selected and time finishes,add correct class on to correct answer.
       const correctAnswer = document
         .querySelectorAll(".answer")
         .forEach((answer) => {
@@ -179,13 +182,21 @@ const checkAnswer = () =>{
             answer.querySelector(".text").innerHTML ===
             questions[currentQuestion - 1].correct_answer
           ) {
-            // only add correct class to correct answer
             answer.classList.add("correct");
           }
         });
-    }
-    
 
+    }
+    // Block user to select further answers
+    const answersPart = document.querySelectorAll(".answer");
+    answersPart.forEach((answer) => {
+    answer.classList.add("checked");
+    //add checked class on all answer as we check for it when on click answer if its present do nothing.
+    //and when checked lets not have a hover effect on checkbox
+    });
+    //After submit show nextButton for moving on to next question.
+    submitButton.style.display = "none";
+    nextButton.style.display = "block";
 
 };
 
