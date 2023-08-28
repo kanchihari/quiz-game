@@ -144,8 +144,50 @@ submitButton.addEventListener("click", () =>{
 const checkAnswer = () =>{
     //first clear interval  when check answer trigger
     clearInterval(timer);
-};
 
+    const selectedAnswer = document.querySelector(".answer.selected");
+    //Any answer is selected
+    if (selectedAnswer) {
+      const answer = selectedAnswer.querySelector(".text").innerHTML;
+      console.log(currentQuestion);
+      if (answer === questions[currentQuestion - 1].correct_answer) {
+        //if answer matched with current question correct answer
+        // increase score
+        score++;
+        selectedAnswer.classList.add("correct");
+      } else {
+        // if worng selected
+        // add wrong class on selected but then also add correct on the correct answer
+        // correct added lets add wrong on selected
+        selectedAnswer.classList.add("wrong");
+        const correctAnswer = document
+          .querySelectorAll(".answer")
+          .forEach((answer) => {
+            if (
+              answer.querySelector(".text").innerHTML ===
+              questions[currentQuestion - 1].correct_answer
+            ) {
+              answer.classList.add("correct");
+            }
+          });
+      }
+    } else {
+      const correctAnswer = document
+        .querySelectorAll(".answer")
+        .forEach((answer) => {
+          if (
+            answer.querySelector(".text").innerHTML ===
+            questions[currentQuestion - 1].correct_answer
+          ) {
+            // only add correct class to correct answer
+            answer.classList.add("correct");
+          }
+        });
+    }
+    
+
+
+};
 
 
 
