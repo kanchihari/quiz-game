@@ -117,6 +117,36 @@ const showQuestion = (question) => {
             }
         });
     });
+
+    // after Updating question or loading the question start timer
+    time = timePerQuestion.value;
+    startTimer(time);
 };
+
+const startTimer = (time) => {
+    timer = setInterval(() => {
+        if(time >= 0) {
+        // if timer more than 0 means time remaining
+        // move progress
+        progress(time);
+        time--;
+        }else{
+            //if time finishes means less than 0
+            checkAnswer();
+        }
+    },1000);
+};
+
+submitButton.addEventListener("click", () =>{
+    checkAnswer();
+});
+
+const checkAnswer = () =>{
+    //first clear interval  when check answer trigger
+    clearInterval(timer);
+};
+
+
+
 
 });
