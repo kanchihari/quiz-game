@@ -220,13 +220,18 @@ const nextQuestion = () => {
     }
   };
 
-  const endScreen = document.querySelector(".end-page"),
+const endScreen = document.querySelector(".end-page"),
     finalScore = document.querySelector(".final-score"),
     totalScore = document.querySelector(".total-score");
-  const showScore = () => {
+const showScore = () => {
      endScreen.classList.remove("hide");
      quiz.classList.add("hide");
     finalScore.innerHTML = score;
      totalScore.innerHTML = `/ ${questions.length}`;
 };
+const restartBtn = document.querySelector(".restart");
+restartBtn.addEventListener("click", () => {
+  window.location.reload();
+});
+
 });
