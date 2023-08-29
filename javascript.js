@@ -132,6 +132,7 @@ const startTimer = (time) => {
         time--;
         }else{
             //if time finishes means less than 0
+            clearInterval(timer);
             checkAnswer();
         }
     },1000);
@@ -141,7 +142,7 @@ submitButton.addEventListener("click", () =>{
     checkAnswer();
 });
 
-const checkAnswer = () =>{
+const checkAnswer = () => {
     //first clear interval  when check answer trigger
     clearInterval(timer);
 
