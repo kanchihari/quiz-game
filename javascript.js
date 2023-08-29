@@ -199,7 +199,25 @@ const checkAnswer = () =>{
     nextButton.style.display = "block";
 
 };
+// on nextbutton click show next question
+nextButton.addEventListener("click",() => {
+    nextQuestion();
+    //also show submitbutton on next question and hide next button
+    submitButton.style.display = "block";
+    nextButton.style.display = "none";
 
+})
 
+const nextQuestion = () => {
+    //if there is any remaining question.
+    if (currentQuestion < questions.length) {
+      currentQuestion++;
+      //show question
+      showQuestion(questions[currentQuestion - 1]);
+    } else {
+        //if no more question left.
+      showScore();
+    }
+  };
 
 });
